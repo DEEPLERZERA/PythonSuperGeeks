@@ -45,6 +45,88 @@ bbb.extend(["Maaarcio", "Nilzaaa"])  #Adiciona mais itens na array de uma vez
 print(bbb) #Imprime na tela
 
 
+#Método insert
+
+bbb.insert(0,"Rauny") #Define em que posição entra no array
+
+print(bbb) #Imprime na tela
+
+#Método remove: 
+
+bbb.remove("William")  #Remove algum item da lista
+print(bbb)  #Imprime na tela o array
+
+
+#Método pop
+
+bbb.insert(0, "Natalia")  #Adiciona elemento no array
+print(bbb) #Imprime na tela
+bbb.pop(1) #Remove índice 1 do array
+bbb.pop(6) #Remove índice 6 do array
+print(bbb)  #Imprime na tela
+
+
+#Método clear
+
+bbb.clear()  #Limpa array
+print(bbb) #Imprime array na tela
+
+
+
+#Método sorted
+
+caracteres = ['X', 'B', '7', 'a', 'Q', '!', 'j', '5', '2']  #Criando array
+print(sorted(caracteres)) #Deixa na ordem
+print(caracteres)  #Imprime array completa
+
+#Método min e max
+
+numeros = ["6", "8", "1", "9", "4"] #Criando array
+
+print(min(numeros)) #Descobre valor min
+print(max(numeros)) #Descobre valor max
+
+
+#tuplas
+
+lista = [4, 2, 8, 6]  #Criando lista e tupla
+tupla = (4, 2, 8, 6)  #Tupla não pode alterar o conteúdo
+
+print(type(lista)) #Imprimindo tipos
+print(type(tupla))
+
+
+lista[0] = 5 #Mudando valor de índice 0
+print(lista) #Imprimindo array
+
+
+#Método sum
+
+print(sum(tupla)) #Retorna soma da array
+
+
+#Método sorted mais reverse
+
+print(sorted(tupla)) #Imprime tupla em ordem crescente
+
+print(tupla) #Imprime tupla 
+
+print(sorted(tupla, reverse = True)) #Coloca tupla em ordem decrescente
+
+
+
+#Método Sort
+
+lista.sort()  #Deixa lista em ordem crescente definitivamente
+print(lista)  #Imprime lista
+
+lista.sort(reverse = True)  #Deixa a lista em ordem decrescente definitivamente
+
+print(lista) #Imprime lista
+
+
+
+
 
 
 
