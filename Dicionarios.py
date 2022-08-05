@@ -58,4 +58,33 @@ alunos['altura'] = 1.81  #Novo campo e dado
 
 print(alunos)
 alunos.pop('altura')  #Remove campo
+print(alunos.pop('altura', "Não tem está chave!"))  #Se não tiver mais o campo imprime mensagem de erro
 print(alunos)
+
+
+#dados = ["nome", "idade", "altura"]  #Cria lista de dados
+
+#cadastro = {}  #Dicionário
+
+#for x in dados:  #Loop for
+    #cadastro[x] = str(input(f'Digite a informação do {x}: ')) #Vai atribuindo a cadastro
+
+
+#print(cadastro)
+
+estado = dict()  #Cria dicionário vazio
+brasil = list() #Cria lista vazia
+
+
+for x in range(3):  #Loop for
+    estado['uf'] = str(input("Digite o nome do estado: "))  #Recebe dados
+    estado['sigla'] = str(input("Digite a sigla do estado: "))
+    brasil.append(estado.copy())  #Vai atribuindo a lista
+
+print(brasil)    
+
+
+print(brasil[0]['sigla'])    #Acessa dado específico
+
+
+
