@@ -22,7 +22,6 @@ class conta_corrente:
         print(f"Agora você tem {self.saldo} reais na sua conta!")  
 
     def consultar_saldo(self):
-        self.saldo = self.saldo
         print(f"Você tem {self.saldo} reais na sua conta!")
 
     def pix(self):
