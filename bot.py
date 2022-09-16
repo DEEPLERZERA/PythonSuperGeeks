@@ -2,23 +2,31 @@ import json
 
 class Bot:
     def __init__(self, nome):
+        try: # Tenta executar o código
+            memoria = open(nome+'.json', 'r') # Abre o arquivo de memória
+        except FileNotFoundError: # Se não existir
+            memoria = open(nome+'.json', 'w') # Cria o arquivo de memória
+            memoria.write('["Andrew"]') # Escreve a lista de conhecidos
+            memoria.close() # Fecha o arquivo de memória
+            memoria = open(nome+'.json', 'r') # Abre o arquivo de memória
+
         self.nome = nome # Nome do bot
-        memoria = open(nome+'.json', 'r') # Abre o arquivo de memória
         self.conhecidos = json.load(memoria) # Carrega o arquivo de memória
         memoria.close() # Fecha o arquivo de memória
         self.historico = [""] # Lista de frases ditas
         
     def escuta(self):
         frase = input(">: ")
-        frase = frase.lower()
-        frase = frase.replace("eh", "é")
+        frase = frase.lower() # Deixa a frase em minúsculo
+        frase = frase.replace("eh", "é") # Substitui "eh" por "é"
         return frase # Retorna a frase  
 
     def pensa(self, frase):
         if frase == "oi":
             return "Olá, qual é o seu nome?"
 
-        
+        if frase == "tchau":
+            return "Tchau, até mais!"    
 
         if self.historico[-1] == "Olá, qual é o seu nome?":
             nome = self.pegaNome(frase)
@@ -34,6 +42,12 @@ class Bot:
 
         if 'O meu nome é' in nome:
             nome = nome[13:]
+
+        if 'Eu sou o' in nome:
+            nome = nome[9:]   
+
+        if 'eu sou o' in nome:
+            nome = nome[9:]       
         return nome #Retorna o nome 
 
     def respondeNome(self, nome):     #Cria a função respondeNome    
@@ -46,6 +60,8 @@ class Bot:
             frase = "Muito prazer "
             self.conhecidos.append(nome)
             memoria = open(self.nome+'.json', 'w') # Abre o arquivo de memória
+            json.dump(self.conhecidos, memoria) # Salva a lista de conhecidos
+            memoria.close() # Fecha o arquivo de memória
 
         return frase + nome #Retorna a frase com o nome
 
