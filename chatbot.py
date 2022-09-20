@@ -13,7 +13,7 @@ while True:
 
 
 
-print("Bye Bye!")      
+print("Bye Bye!")  # Imprime a mensagem de despedida     
 
 
 
@@ -23,6 +23,13 @@ print("Bye Bye!")
 
 
 
+
+
+
+
+
+
+#print(eval("1+1")) # Imprime 2
 #a = 10
 
 #try:     # Tenta executar o código
